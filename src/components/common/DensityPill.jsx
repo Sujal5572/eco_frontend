@@ -1,10 +1,15 @@
-import { DENSITY_CONFIG } from "../../config/constants";
+import { getDensityCfg } from '../../utils/helper';
 
 export default function DensityPill({ level }) {
-  const c = DENSITY_CONFIG[level] || DENSITY_CONFIG.EMPTY;
-
+  const c = getDensityCfg(level);
   return (
-    <span style={{ background: c.bg, color: c.color, padding: "4px 8px", borderRadius: 12 }}>
+    <span style={{
+      fontFamily: 'JetBrains Mono, monospace',
+      fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
+      textTransform: 'uppercase', padding: '3px 8px',
+      borderRadius: 20, background: c.bg, color: c.color,
+      border: `1px solid ${c.border}`,
+    }}>
       {c.label}
     </span>
   );

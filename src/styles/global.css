@@ -1,0 +1,35 @@
+/* ─── EcoCab Design Tokens ─────────────────────────────── */
+:root {
+  --ink:        #0f0e0e;
+  --ink-60:     rgba(15,14,14,0.6);
+  --ink-10:     rgba(15,14,14,0.08);
+  --surface:    #F7F5F0;
+  --surface-2:  #EDEAE2;
+  --white:      #ffffff;
+  --saffron:    #E8850A;
+  --saffron-bg: #FAEEDA;
+  --signal:     #3B6D11;
+  --signal-bg:  #EAF3DE;
+  --surge:      #A32D2D;
+  --surge-bg:   #FCEBEB;
+  --blue:       #185FA5;
+  --blue-bg:    #E6F1FB;
+  --mono:       'JetBrains Mono', monospace;
+  --display:    'Syne', sans-serif;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-thumb { background: var(--ink-10); border-radius: 3px; }
+
+/* ─── Utility classes not in Tailwind ──────────────────── */
+.font-mono  { font-family: var(--mono); }
+.font-display { font-family: var(--display); }
+
+/* ─── Live pulse ─────────────────────────────────────── */
+@keyframes live-pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.live-pulse { animation: live-pulse 2s infinite; }
+
+/* ─── Slide-up entry ─────────────────────────────────── */
+@keyframes slide-up { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+.slide-up { animation: slide-up 0.3s cubic-bezier(0.23,1,0.32,1) both; }
