@@ -1,4 +1,4 @@
-export const API_BASE = '/api/v1';
+export const API_BASE = 'http://localhost:8080/api/v1';
 export const WS_BASE  = (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host;
 
 export const DENSITY_CONFIG = {
