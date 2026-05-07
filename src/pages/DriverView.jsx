@@ -187,7 +187,7 @@ export default function DriverView({ user }) {
       <Sidebar />
       <div style={S.main}>
         <div style={S.topbar}>
-          <div><div style={{ fontSize: 18, fontWeight: 700 }}>Driver Dashboard</div><div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#888', marginTop: 2 }}>{ step === 'online' ? `Online · ${selCorridor?.code}` : 'Go online to see demand' }</div></div>
+          <div><div style={{ fontSize: 18, fontWeight: 700 }}>Driver Dashboard</div><div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#888', marginTop: 2 }}>{ step === 'online' ? `Online · ${selCorridor?.name}` : 'Go online to see demand' }</div></div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: step === 'online' ? '#EAF3DE' : '#F1EFE8', color: step === 'online' ? '#3B6D11' : '#888', fontFamily: 'JetBrains Mono, monospace', fontSize: 10, fontWeight: 700, padding: '5px 10px', borderRadius: 20 }}>
             <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'currentColor' }} />
             {step === 'online' ? 'LIVE' : 'OFFLINE'}
@@ -212,7 +212,7 @@ export default function DriverView({ user }) {
           {step === 'online' && heatmap && (
             <div style={S.card}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
-                <div style={S.cardTitle}>{heatmap.corridorCode} · Demand heatmap</div>
+                <div style={S.cardTitle}>{heatmap.corridorName} · Demand heatmap</div>
                 <button onClick={loadHeatmap} style={{ ...S.btn('outline'), fontSize: 12, padding: '5px 12px' }}>↻ Refresh</button>
               </div>
               {/* Node row */}
