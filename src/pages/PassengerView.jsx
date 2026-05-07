@@ -95,7 +95,7 @@ export default function PassengerView({ user }) {
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em' }}>Your signal is live</div>
               <div style={{ fontSize: 14, color: '#888', marginTop: 8, lineHeight: 1.6 }}>
-                Stand anywhere on <strong>{signal.corridorCode}</strong>. Autos will stop for you.
+                Stand anywhere on <strong>{signal.corridorName}</strong>. Autos will stop for you.
               </div>
             </div>
             <CountdownRing minutesLeft={minutesLeft} />
@@ -150,7 +150,7 @@ export default function PassengerView({ user }) {
 
           {heatmap && (
             <div style={S.card}>
-              <div style={S.cardTitle}>Live Demand · {heatmap.corridorCode}</div>
+              <div style={S.cardTitle}>Live Demand · {heatmap.corridorName}</div>
               <div style={{ display: 'flex', gap: 4, alignItems: 'flex-end', height: 72 }}>
                 {heatmap.segments.map((s, i) => {
                   const cfg = DENSITY_CONFIG[s.densityLevel] || DENSITY_CONFIG.EMPTY;
